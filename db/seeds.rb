@@ -6,3 +6,11 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 Teacher.create(name: 'Roland', email: 'roland@gamil.com', password: '123456', role: 'Teacher', school: 'TTUS' )
+
+Teacher.create(name: 'Aku', email: 'aku@gamil.com', password: '123456', role: 'Teacher', school: 'NewSchool' )
+
+Student.create(name: 'Tom', email: 'tom@gamil.com', password: '123456', role: 'Student', school: 'TTUS', dob: '12/09/2000' )
+
+Student.create(name: 'Jerry', email: 'jerry@gamil.com', password: '123456', role: 'Student', school: 'Tom School', dob: '12/09/2000' )
+
+Student.create(name: 'Mi', email: 'mi@gamil.com', password: '123456', role: 'Student', school: 'Tom School', dob: '12/09/2000' )
