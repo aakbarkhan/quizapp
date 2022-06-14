@@ -15,7 +15,14 @@ class Api::V1::QuizzesController < ApplicationController
 
     def show
         @quiz = Quiz.where(teacher_id: params[:id])
-        render json: @quiz
+        if @quiz
+            render json: @quiz
+        else
+            render json: {
+                message: [' no Quiz found on the record']
+              }
+        end
+        # render json: @quiz
     end
 
     def create

@@ -21,3 +21,9 @@ Quiz.create(title: 'History', subject: 'Math', chapter: 'World Hostory', teacher
 Quiz.create(title: 'History', subject: 'Math', chapter: 'Idian Hostory', teacher_id: 1)
 
 Quiz.create(title: 'Leaves', subject: 'Science', chapter: 'Plants', teacher_id: 2 )
+
+Question.create(question: 'what is your name?', option_1: 'tom', option_2: 'Jerry', option_3: 'Tin', option_4: 'Zachee', answer: 'Zachee', right: true, count: 1, quiz_id: 1, teacher_id: 1)
+
+Question.create(question: 'what is your pet name?', option_1: 'tom', option_2: 'Jerry', option_3: 'Tin', option_4: 'Zachee', answer: 'tom', right: true, count: 1, quiz_id: 1, teacher_id: 1)
+
+Question.create(question: 'what is favourte color?', option_1: 'green', option_2: 'Jerry', option_3: 'white', option_4: 'red', answer: 'white', right: true, count: 1, quiz_id: 2, teacher_id: 2)
