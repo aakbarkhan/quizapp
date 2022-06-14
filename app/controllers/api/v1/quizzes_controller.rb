@@ -14,7 +14,7 @@ class Api::V1::QuizzesController < ApplicationController
     end
 
     def show
-        @quiz = Quiz.find_by(id: params[:id])
+        @quiz = Quiz.where(teacher_id: params[:id])
         render json: @quiz
     end
 
@@ -28,6 +28,6 @@ class Api::V1::QuizzesController < ApplicationController
     private
 
     def quiz_params
-        params.require(:quiz).permet(:title, :subject, :chapter)
+        params.require(:quiz).permet(:title, :subject, :chapter, teacher_id:)
     end
 end

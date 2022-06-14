@@ -16,7 +16,8 @@ Student.create(name: 'Jerry', email: 'jerry@gamil.com', password: '123456', role
 Student.create(name: 'Mi', email: 'mi@gamil.com', password: '123456', role: 'Student', school: 'Tom School', dob: '12/09/2000' )
 
 
-Quiz.create(title: 'Binary number', subject: 'Math', chapter: 'Number system')
+Quiz.create(title: 'Binary number', subject: 'Math', chapter: 'Number system', teacher_id: 1)
+Quiz.create(title: 'History', subject: 'Math', chapter: 'World Hostory', teacher_id: 1)
+Quiz.create(title: 'History', subject: 'Math', chapter: 'Idian Hostory', teacher_id: 1)
 
-
-Quiz.create(title: 'Leaves', subject: 'Science', chapter: 'Plants' )
+Quiz.create(title: 'Leaves', subject: 'Science', chapter: 'Plants', teacher_id: 2 )
