@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :teachers
       resources :students
+      resources :quizzes
 
     end
   end
