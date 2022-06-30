@@ -10,9 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_13_135626) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_30_040204) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "questions", force: :cascade do |t|
+    t.string "question"
+    t.string "option_1"
+    t.string "option_2"
+    t.string "option_3"
+    t.string "option_4"
+    t.string "answer"
+    t.boolean "right"
+    t.integer "count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "teacher_id", null: false
+    t.bigint "quiz_id", null: false
+    t.string "selected_answer"
+    t.index ["quiz_id"], name: "index_questions_on_quiz_id"
+    t.index ["teacher_id"], name: "index_questions_on_teacher_id"
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.string "title"
+    t.string "subject"
+    t.string "chapter"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "teacher_id", null: false
+    t.index ["teacher_id"], name: "index_quizzes_on_teacher_id"
+  end
 
   create_table "students", force: :cascade do |t|
     t.string "role"
@@ -23,6 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_13_135626) do
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_confirmation"
   end
 
   create_table "teachers", force: :cascade do |t|
@@ -33,6 +62,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_13_135626) do
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
+    t.string "password_confirmation"
   end
 
+  add_foreign_key "questions", "quizzes"
+  add_foreign_key "questions", "teachers"
+  add_foreign_key "quizzes", "teachers"
 end
