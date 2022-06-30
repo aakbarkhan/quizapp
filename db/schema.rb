@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_14_193833) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_30_040204) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,6 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_14_193833) do
     t.datetime "updated_at", null: false
     t.bigint "teacher_id", null: false
     t.bigint "quiz_id", null: false
+    t.string "selected_answer"
     t.index ["quiz_id"], name: "index_questions_on_quiz_id"
     t.index ["teacher_id"], name: "index_questions_on_teacher_id"
   end
@@ -50,6 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_14_193833) do
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_confirmation"
   end
 
   create_table "teachers", force: :cascade do |t|
@@ -60,6 +62,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_14_193833) do
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
+    t.string "password_confirmation"
   end
 
   add_foreign_key "questions", "quizzes"
